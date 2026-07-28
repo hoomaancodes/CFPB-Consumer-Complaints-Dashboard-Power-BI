@@ -38,8 +38,7 @@ rows, shifting columns out of alignment and inflating the apparent row count to
 1,970,829 (actually the number of physical text lines, not records).
 
 **Fix:** Cleaned the data using Python (`pandas`, Python engine), which correctly parses 
-quoted multi-line fields. This recovered the true record count of **1,282,355 rows** -  
-verified against Kaggle's published date-range bucket totals — with zero data loss.
+quoted multi-line fields. This recovered the true record count of **1,282,355 rows** - verified against Kaggle's published date-range bucket totals — with zero data loss.
 
 
 ## Dashboard Visuals
