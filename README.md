@@ -33,12 +33,12 @@ appearing in date fields.
 **Root cause:** The "Consumer complaint narrative" column contains free-text complaints 
 where users pressed Enter multiple times while typing. These multi-line fields were 
 correctly quoted per CSV standard, but Power BI's default Text/CSV importer doesn't 
-handle quoted multi-line fields properly — it miscounted embedded line breaks as new 
+handle quoted multi-line fields properly, it miscounted embedded line breaks as new 
 rows, shifting columns out of alignment and inflating the apparent row count to 
 1,970,829 (actually the number of physical text lines, not records).
 
 **Fix:** Cleaned the data using Python (`pandas`, Python engine), which correctly parses 
-quoted multi-line fields. This recovered the true record count of **1,282,355 rows** — 
+quoted multi-line fields. This recovered the true record count of **1,282,355 rows** -  
 verified against Kaggle's published date-range bucket totals — with zero data loss.
 
 
